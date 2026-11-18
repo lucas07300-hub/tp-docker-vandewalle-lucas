@@ -29,3 +29,14 @@
 * Installation de flask sur ma machine avec pip install flask
 * Création du fichier app.py en faisant une fonction pour l'affichage du hello World et du lancement de l'application sur le port 80.
 * Test sur mon navigateur ok
+
+* Ecriture du Dockerfile et exposition sur le port 80. 
+* Création de l'image flask depuis mon dockerfile :
+    - docker build -t flask-app .
+    - docker run -d -p 8080:80 --name flask flask-app NOK
+    - Mon DockerFile provoque l'erreur python: can't open file '/app/app.py': [Errno 2] No such file or directory". En ajoutant la ligne "COPY . ." , cela a pu copier mon app depuis le bon répertoire. En réalisant la modification, le conteneur a pu se lancer correctement.
+* Test OK sur mon navigateur en localhost:8080.
+
+===============================================
+
+## Exercice 6 :
