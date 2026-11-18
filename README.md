@@ -40,3 +40,19 @@
 ===============================================
 
 ## Exercice 6 :
+
+* Création du fichier docker-compose.yml pour configurer mes deux conteneurs en même temps.
+* Lancement des commandes :
+    - docker compose up -d (KO)
+        Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint tp-docker-vandewalle-lucas-mongo-1 (57d9b0d9f07c13a8eab4704b4cdc86cd03838412922fc96abe1281f924a22f7a): Bind for 0.0.0.0:27017 failed: port is already allocated
+    - J'avais installé l'image mongo en localhost et le conteneur utilisé toujours le port. (docker rm -f mongo)
+
+    - docker compose up -d (OK)
+
+    - Vérification de l'éxécution de mon app (NOK)
+    web-1  | Traceback (most recent call last):                           
+    web-1  |   File "/app/app.py", line 2, in module                   
+    web-1  |     from pymongo import MongoClient
+    web-1  | ModuleNotFoundError: No module named 'pymongo'
+    -  Correction dans le dockerfile avec l'ajout de "RUN pip install pymongo" 
+
