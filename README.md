@@ -56,3 +56,13 @@
     web-1  | ModuleNotFoundError: No module named 'pymongo'
     -  Correction dans le dockerfile avec l'ajout de "RUN pip install pymongo" 
 
+    -  Correction dans le dockerfile avec l'ajout de "RUN pip install pymongo" + test (NOK), même message d'erreur
+    - docker compose down + docker compose build --no-cache + docker compose up -d + test en http://localhost:8080 : SUCCESS (PS C:\Users\lucas\Documents\Master MIAGE\M2 UTC\Intégration et déploiement continus\TP\tp-docker-vandewalle-lucas> docker compose logs web  
+    web-1  |  * Serving Flask app 'app'
+    web-1  |  * Debug mode: off
+    web-1  | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+    web-1  |  * Running on all addresses (0.0.0.0)
+    web-1  |  * Running on http://127.0.0.1:80
+    web-1  |  * Running on http://172.19.0.3:80
+    web-1  | Press CTRL+C to quit
+    web-1  | 172.19.0.1 - - [18/Nov/2026 20:15:43]  "GET / HTTP/1.1" 200 -)
